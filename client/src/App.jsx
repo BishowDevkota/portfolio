@@ -1,13 +1,12 @@
-  import { useState } from "react";
+import React from 'react'
+import './App.css'
+import Header from './components/Header'
+const App = () => {
+  return (
+    <div className='w-full h-screen bg-[--background]'>
+      <Header/>
+    </div>
+  )
+}
 
-  import "./App.css";
-
-
-  
-  function App() {
-    const [count, setCount] = useState(0);
-
-    return <h1 className="text-3xl bg-red-700 font-bold underline">Hello world!</h1>;
-  }
-
-  export default App;
+export default App
