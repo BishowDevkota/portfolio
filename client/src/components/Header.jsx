@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Header = () => {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <header className="sticky">
       <div className="w-[80%] bg-[--background] mx-auto p-4 flex justify-between items-center font-rubik">
