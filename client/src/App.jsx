@@ -3,7 +3,7 @@ import Header from './components/Header'
 import Home from './pages/Home'
 const App = () => {
   return (
-    <div className='w-full h-screen bg-[--background]'>
+    <div className='w-full h-full bg-[--background]'>
       <Header />
       <Home />
     </div>
