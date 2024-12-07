@@ -5,10 +5,12 @@ import Home from "./pages/Home";
 const App = () => {
   return (
     <div className="w-full bg-[--background] h-auto">
-      <div className=" w-[80%] mx-auto">
+      <div className="mx-auto">
         <Header />
         <div className="flex flex-col gap-20">
-          <Home />
+          <div className=" bg-cover bg-[url('/image/wlc-bg1.jpg')] ">
+            <Home />
+          </div>
           <About />
         </div>
       </div>

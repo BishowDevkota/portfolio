@@ -15,8 +15,8 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50">
-      <div className="bg-[--background] mx-auto p-4 flex justify-between items-center font-rubik">
+    <header className="sticky top-0 mx-auto z-50 border-cyan-400 border-b style={{ borderBottomWidth: '0.2px' }}">
+      <div className=" mx-auto p-4 flex justify-between items-center font-rubik w-[80%]">
         {/* Logo */}
         <div className="text-center rounded-full bg-[--green] p-4 h-16 w-16 text-2xl font-bold text-white ">
           B
@@ -48,9 +48,8 @@ const Header = () => {
         </div>
 
         <div
-          className={`fixed right-0 h-screen w-full top-0 bg-[#2E3D44] bg-opacity-50 transform transition-transform duration-300 ease-in-out ${
-            isIconMenuOpen ? "translate-x-0" : "translate-x-full"
-          } z-10`}
+          className={`fixed right-0 h-screen w-full top-0 bg-[#2E3D44] bg-opacity-50 transform transition-transform duration-300 ease-in-out ${isIconMenuOpen ? "translate-x-0" : "translate-x-full"
+            } z-10`}
         >
           {/* Sidebar */}
           <div className="absolute right-0 top-0 w-[25%] h-full bg-black text-white p-4 z-20 opacity-100">
@@ -77,9 +76,8 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         <div
-          className={`fixed right-0 h-screen w-[40%] top-0 bg-[#2E3D44] transform transition-transform duration-300 ease-in-out ${
-            isMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+          className={`fixed right-0 h-screen w-[40%] top-0 bg-[#2E3D44] transform transition-transform duration-300 ease-in-out ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
         >
           <div className="flex flex-col items-center justify-center h-full gap-5">
             {navItems.map((item, index) => (
