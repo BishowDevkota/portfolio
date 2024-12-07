@@ -1,29 +1,85 @@
-import React from "react";
+import React, { useState } from "react";
 import ActionButton from "../components/ActionButton";
+import { IoPlaySharp } from "react-icons/io5";
 
 const About = () => {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
   return (
-    <div className="flex flex-wrap justify-between items-center bg-[--background] gap-10 text-white max-md:flex-col h-max">
-      {/* Right Section: Image */}
-      <div className="flex-1 flex justify-center max-w-full">
-        <div className="flex w-[697] h-[445px] bg-[url('/image/about1.png')]">
-          
+    <div className="flex flex-col lg:flex-row justify-between items-center bg-[--background] gap-10 text-white h-max px-5 md:px-10 lg:px-20 relative">
+      {/* Left Section: Image with Background */}
+      <div className="flex-1 w-full relative flex flex-col items-center">
+        {/* Background Shape */}
+        <div
+          className="absolute w-[50%] h-[45%] bg-no-repeat bg-cover top-[65%] left-[-25%]"
+          style={{
+            backgroundImage: "url('/image/about-shape.svg')",
+          }}
+        ></div>
+
+        {/* Foreground Image */}
+        <div className="relative z-10 w-full h-72 sm:h-80 md:h-96 lg:h-[445px]">
+          <img
+            src="/image/about1.png"
+            alt="About"
+            className="w-full h-full object-cover"
+          />
+
+          {/* Play Button */}
+          <div
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+            onClick={() => setIsVideoOpen(true)}
+          >
+            <div className="bg-[--green] h-[100px] w-[100px] rounded-full flex justify-center items-center">
+              <IoPlaySharp size={40} />
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Left Section: Text */}
-      <div className="flex-1 flex-wrap text-center md:text-left">
-        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold">
+      {/* Video Modal */}
+      {isVideoOpen && (
+        <div
+          className="absolute top-0 left-0 w-full h-full bg-[#000000cc] z-50 flex justify-center items-center fade-in"
+          onClick={() => setIsVideoOpen(false)}
+        >
+          <div
+            className="relative w-11/12 md:w-3/4 lg:w-1/2 h-auto bg-black rounded-md scale-up"
+            onClick={(e) => e.stopPropagation()} // Prevents modal close when clicking on video
+          >
+            <video
+              className="w-full h-auto rounded-md"
+              src="/video/sample.mp4" // Replace with your video file path
+              controls
+              autoPlay
+            >
+              Your browser does not support the video tag.
+            </video>
+            <button
+              className="absolute top-2 right-2 text-white bg-red-500 rounded-full w-8 h-8 flex justify-center items-center"
+              onClick={() => setIsVideoOpen(false)}
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Right Section: Text */}
+      <div className="flex-1 flex flex-col gap-3 items-center lg:items-start lg:text-left text-justify">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
           Failure is the condiment That Gives{" "}
           <span className="text-[--green]">Success</span>
         </h2>
-        <p className="mt-4 text-lg sm:text-xl md:text-lg">
+        <p className="mt-4 text-base sm:text-lg md:text-lg lg:text-lg text-justify">
           Spend more time focusing on the important aspects of your business.
           Turn to McCartney HR LLC in Brooklyn, NY for HR solutions. As an
           advanced virtual HR company, we are offering online HR systems that
           can be customized depending on your business needs.
         </p>
-        <ActionButton text={"Download CV"}/>
+        <div>
+          <ActionButton text="Download CV" />
+        </div>
       </div>
     </div>
   );
