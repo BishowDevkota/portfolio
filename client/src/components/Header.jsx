@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const Header = () => {
+<<<<<<< HEAD
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isIconMenuOpen, setIsIconMenuOpen] = useState(false);
 
@@ -14,6 +15,9 @@ const Header = () => {
     { text: "Blog", path: "blog" },
   ];
 
+=======
+  const [isOpen, setIsOpen] = useState(false);
+>>>>>>> 0bc6666e47e1de3ca28edc8ac95e2fa54b4abcfd
   return (
     <header className="sticky top-0 z-50">
       <div className="w-[80%] bg-[--background] mx-auto p-4 flex justify-between items-center font-rubik">
