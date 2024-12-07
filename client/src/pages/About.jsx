@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import ActionButton from "../components/ActionButton";
 import { IoPlaySharp } from "react-icons/io5";
 
-
 const About = () => {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
   return (
-    <div className="flex flex-col lg:flex-row justify-between items-center bg-[--background] gap-10 text-white h-max px-5 md:px-10 lg:px-20">
+    <div className="flex flex-col lg:flex-row justify-between items-center bg-[--background] gap-10 text-white h-max px-5 md:px-10 lg:px-20 relative">
       {/* Left Section: Image with Background */}
       <div className="flex-1 w-full relative flex flex-col items-center">
         {/* Background Shape */}
@@ -25,13 +26,44 @@ const About = () => {
           />
 
           {/* Play Button */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <div
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+            onClick={() => setIsVideoOpen(true)}
+          >
             <div className="bg-[--green] h-[100px] w-[100px] rounded-full flex justify-center items-center">
               <IoPlaySharp size={40} />
             </div>
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {isVideoOpen && (
+        <div
+          className="absolute top-0 left-0 w-full h-full bg-[#000000cc] z-50 flex justify-center items-center fade-in"
+          onClick={() => setIsVideoOpen(false)}
+        >
+          <div
+            className="relative w-11/12 md:w-3/4 lg:w-1/2 h-auto bg-black rounded-md scale-up"
+            onClick={(e) => e.stopPropagation()} // Prevents modal close when clicking on video
+          >
+            <video
+              className="w-full h-auto rounded-md"
+              src="/video/sample.mp4" // Replace with your video file path
+              controls
+              autoPlay
+            >
+              Your browser does not support the video tag.
+            </video>
+            <button
+              className="absolute top-2 right-2 text-white bg-red-500 rounded-full w-8 h-8 flex justify-center items-center"
+              onClick={() => setIsVideoOpen(false)}
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Right Section: Text */}
       <div className="flex-1 flex flex-col gap-3 items-center lg:items-start lg:text-left text-justify">
