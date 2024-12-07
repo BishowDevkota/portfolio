@@ -6,7 +6,7 @@ const About = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
-    <div className="flex flex-col lg:flex-row justify-between items-center bg-[--background] gap-10 text-white h-max px-5 md:px-10 lg:px-20 relative">
+    <div className="w-[80%] mx-auto flex flex-col lg:flex-row justify-between gap-16 items-center bg-[--background] text-white h-max relative">
       {/* Left Section: Image with Background */}
       <div className="flex-1 w-full relative flex flex-col items-center">
         {/* Background Shape */}
@@ -68,8 +68,8 @@ const About = () => {
       {/* Right Section: Text */}
       <div className="flex-1 flex flex-col gap-3 items-center lg:items-start lg:text-left text-justify">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-          Failure is the condiment That Gives{" "}
-          <span className="text-[--green]">Success</span>
+          FAILURE IS THE CONDIMENT THAT GIVES
+          <span className="text-[--green]"> SUCCESS</span>
         </h2>
         <p className="mt-4 text-base sm:text-lg md:text-lg lg:text-lg text-justify">
           Spend more time focusing on the important aspects of your business.
