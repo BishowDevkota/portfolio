@@ -15,7 +15,7 @@ const Home = () => {
               consectetur adipisicing elit.
             </span>
           </div>
-          <ActionButton />
+          <ActionButton text={"GETTING STARTED"}/>
         </div>
         <div>
           <img src="/image/author1.png" alt="" />
