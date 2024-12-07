@@ -1,8 +1,9 @@
 import React from "react";
+import ActionButton from "../components/ActionButton";
 
 const About = () => {
   return (
-    <div className="h-screen w-[80%] mx-auto flex flex-wrap justify-between items-center bg-[--background] gap-10 text-white max-md:flex-col">
+    <div className="flex flex-wrap justify-between items-center bg-[--background] gap-10 text-white max-md:flex-col h-max">
       {/* Right Section: Image */}
       <div className="flex-1 flex justify-center max-w-full">
         <div className="flex w-[450px]">
@@ -22,9 +23,7 @@ const About = () => {
           advanced virtual HR company, we are offering online HR systems that
           can be customized depending on your business needs.
         </p>
-        <button className="w-32 h-10 mt-5 rounded bg-[--green] text-white font-bold hover:bg-[--background] hover:text-[--green] hover:border-2 hover:border-[--green]">
-          Download CV
-        </button>
+        <ActionButton />
       </div>
     </div>
   );
