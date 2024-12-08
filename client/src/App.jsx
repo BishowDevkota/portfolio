@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import About from "./pages/About";
 import Blogs from "./pages/Blogs";
 import Home from "./pages/Home";
-import Payment from "./pages/Payment";
 import Services from "./pages/Services";
 const App = () => {
   return (
