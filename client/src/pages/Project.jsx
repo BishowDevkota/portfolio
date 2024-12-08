@@ -30,7 +30,7 @@ const Project = () => {
   };
 
   return (
-    <div className="w-[80%] mx-auto">
+    <div className="w-[80%] mx-auto mb-12">
       <SectionTitleWithArrow
         smallHeading={"WORKING PROCESS"}
         largeWhiteHeading={"LATEST WORKING"}

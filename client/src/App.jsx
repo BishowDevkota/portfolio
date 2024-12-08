@@ -19,9 +19,13 @@ const App = () => {
           <About />
           <Skills />
           <Services />
-          <Project />
+          <div className="bg-cover bg-[url('/image/project-bg.jpg')]">
+            <Project />
+          </div>
           <Blogs />
-          <NewsLetter />
+          <div className="bg-cover bg-[url('/image/map.png')]">
+            <NewsLetter />
+          </div>
         </div>
       </div>
     </div>

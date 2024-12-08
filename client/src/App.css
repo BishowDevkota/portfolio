@@ -4,11 +4,42 @@
   --background: #090b0a;
   --white: #ffffff;
   --cardBg: #131617;
+  --inputBg: #32383a;
+  --placeholder: #757575;
 }
 
 body {
   font-family: Rubik, sans-serif;
 }
+@keyframes slideDown {
+  from {
+      transform: translateY(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
 
+@keyframes slideDownB {
+  from {
+      transform: translateY(-80%);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
 
-
+@keyframes slideRight {
+  from {
+      transform: translateX(-50%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
