@@ -2,7 +2,6 @@ import "./App.css";
 import Header from "./components/Header";
 import About from "./pages/About";
 import Home from "./pages/Home";
-import Services from "./pages/Services";
 import Skills from "./pages/Skill";
 const App = () => {
   return (
