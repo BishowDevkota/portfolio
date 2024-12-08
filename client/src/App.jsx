@@ -1,5 +1,6 @@
 import "./App.css";
 import Header from "./components/Header";
+import NewsLetter from "./components/NewsLetter";
 import About from "./pages/About";
 import Blogs from "./pages/Blogs";
 import Home from "./pages/Home";
@@ -16,6 +17,7 @@ const App = () => {
           <About />
           <Services />
           <Blogs />
+          <NewsLetter />
         </div>
       </div>
     </div>

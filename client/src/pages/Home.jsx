@@ -1,4 +1,5 @@
 import ActionButton from "../components/ActionButton";
+import { MdArrowForwardIos } from "react-icons/md";
 
 const Home = () => {
     return (
@@ -14,10 +15,9 @@ const Home = () => {
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit.
                             </span>
                         </div>
-                        <ActionButton text="GETTING STARTED" />
+                        <ActionButton text="GETTING STARTED" IconComponent={MdArrowForwardIos} />
                     </div>
                 </div>
-
                 <div className="max-lg:hidden flex w-full justify-center">
                     <img
                         src="/image/author1.png"

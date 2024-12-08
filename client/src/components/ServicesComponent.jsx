@@ -4,7 +4,7 @@ import AnimiatedCircle from "./AnimiatedCircle";
 const ServicesComponent = (props) => {
     return (
         <div className="relative overflow-hidden group">
-            <div className="z-10 flex flex-col flex-wrap min-w-[280px] h-auto items-center p-10 gap-5 bg-[#131617] group-hover:bg-[--green] transition-all">
+            <div className="z-10 flex flex-col flex-wrap min-w-[270px] h-auto items-center p-10 gap-5 bg-[#131617] group-hover:bg-[--green] transition-all">
                 <img
                     src={`${props.image}`}
                     alt="service"
