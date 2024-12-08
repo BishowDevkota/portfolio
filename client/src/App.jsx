@@ -4,7 +4,9 @@ import NewsLetter from "./components/NewsLetter";
 import About from "./pages/About";
 import Blogs from "./pages/Blogs";
 import Home from "./pages/Home";
+import Project from "./pages/Project";
 import Services from "./pages/Services";
+import Skills from "./pages/Skill";
 const App = () => {
   return (
     <div className="w-full bg-[--background] h-auto">
@@ -15,7 +17,9 @@ const App = () => {
             <Home />
           </div>
           <About />
+          <Skills />
           <Services />
+          <Project />
           <Blogs />
           <NewsLetter />
         </div>
