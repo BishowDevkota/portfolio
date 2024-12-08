@@ -3,9 +3,12 @@
   --green: #08d665;
   --background: #090b0a;
   --white: #ffffff;
+  --cardBg: #131617;
 }
 
 body {
-  font-family: Rubik, sans-serif  ;
+  font-family: Rubik, sans-serif;
 }
+
+
 
