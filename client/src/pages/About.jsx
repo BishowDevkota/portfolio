@@ -27,13 +27,23 @@ const About = () => {
 
           {/* Play Button */}
           <div
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
-            onClick={() => setIsVideoOpen(true)}
-          >
-            <div className="bg-[--green] h-[100px] w-[100px] rounded-full flex justify-center items-center">
-              <IoPlaySharp size={40} />
-            </div>
-          </div>
+  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+  onClick={() => setIsVideoOpen(true)}
+>
+  <div className="relative flex justify-center items-center">
+    {/* Wavy Effect */}
+    <div className="absolute h-[150px] w-[150px] rounded-full bg-[--green] opacity-20 animate-ping"></div>
+
+    {/* Play Button */}
+    <div className="bg-[--green] h-[100px] w-[100px] rounded-full flex justify-center items-center">
+      <IoPlaySharp size={40} />
+    </div>
+  </div>
+</div>
+
+
+
+
         </div>
       </div>
 
