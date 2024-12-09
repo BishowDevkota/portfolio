@@ -5,6 +5,7 @@ import NewsLetter from "./components/NewsLetter";
 import About from "./pages/About";
 import Blogs from "./pages/Blogs";
 import Home from "./pages/Home";
+import BlogSlider from "./pages/Pagination";
 import Project from "./pages/Project";
 import Services from "./pages/Services";
 import Skills from "./pages/Skill";

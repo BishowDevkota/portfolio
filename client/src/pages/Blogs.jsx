@@ -1,57 +1,62 @@
-import React, { useState } from 'react';
-import SectionTitleWithArrow from '../components/SectionTitleWithArrow';
-import ProjectCard from '../components/ProjectCard';
-import Blog from '../components/Blog';
-
+import React, { useState } from "react";
+import SectionTitleWithArrow from "../components/SectionTitleWithArrow";
+import Blog from "../components/Blog";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { useMediaQuery } from "react-responsive";
 
 const Blogs = () => {
-    const [offset, setOffset] = useState(0);
-    const totalProjects = 4;
-    const cardWidth = 380;
-    const visibleCards = 4;
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-    const handleSlide = (direction) => {
-        if (direction === 'left') {
-            setOffset((prev) => {
-                if (prev === 0) {
-                    return -(totalProjects - 1);
-                }
-                return prev + 1;
-            });
-        } else if (direction === 'right') {
-            setOffset((prev) => {
-                if (prev === -(totalProjects - 1)) {
-                    return 0;
-                }
-                return prev - 1;
-            });
+  const blogs = [
+    { id: 2, pubDate: "September 25, 2024", title: "Blog Post gfdsuyhfd fgdsjh fgds sdfghjg dfsdgfs sdf " },
+    { id: 1, pubDate: "September 25, 2024", title: "Blog Post 1" },
+    { id: 3, pubDate: "September 25, 2024", title: "Blog Post 3" },
+    { id: 4, pubDate: "September 25, 2024", title: "Blog Post 4" },
+    { id: 5, pubDate: "September 25, 2024", title: "Blog Post 5" },
+    { id: 6, pubDate: "September 25, 2024", title: "Blog Post 6" },
+    { id: 7, pubDate: "September 25, 2024", title: "Blog Post 7" },
+    { id: 8, pubDate: "September 25, 2024", title: "Blog Post 8" },
+    { id: 9, pubDate: "September 25, 2024", title: "Blog Post 9" },
+    { id: 10, pubDate: "September 25, 2024", title: "Blog Post 10" },
+  ];
+
+  const isSmallScreen = useMediaQuery({ maxWidth: 640 });
+  const isMediumScreen = useMediaQuery({ minWidth: 641, maxWidth: 1024 });
+
+  // Determine the visible blog count based on screen size
+  const getVisibleBlogCount = () => {
+    if (isSmallScreen) return 1;
+    if (isMediumScreen) return 2;
+    return 3; // default to 3 for large screens
+  };
+
+  const visibleBlogs = Array.from({ length: getVisibleBlogCount() }, (_, index) => {
+    const blogIndex = (currentIndex + index) % blogs.length;
+    return blogs[blogIndex];
+  });
+
+  return (
+    <div className="w-[80%] mx-auto py-8">
+      <SectionTitleWithArrow
+        smallHeading={"WORKING PROCESS"}
+        largeWhiteHeading={"LATEST WORKING"}
+        largeGreenHeading={"PROJECTS"}
+        description={
+          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint ratione reprehenderit"
         }
-    };
+        setCurrentIndex={setCurrentIndex} // Pass the state updater
+        blogs={blogs} // Pass blogs
+      />
 
-    return (
-        <div className="w-[80%] mx-auto">
-            <SectionTitleWithArrow
-                smallHeading={"RECENT NEWS DESK"} largeWhiteHeading={"LATEST NEWS &"} largeGreenHeading={"BLOGS"} description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint ratione reprehenderit, error qui enim sit ex provident"}
-                handleSlide={handleSlide}
-            />
-            <div className="overflow-hidden mt-8 relative">
-                <div
-                    className="flex gap-8 transition-transform duration-300"
-                    style={{
-                        transform: `translateX(${offset * cardWidth}px)`,
-                        width: `${(totalProjects + 2) * cardWidth}px`,
-                    }}
-                >
-                    <Blog pubDate="September 28, 2024" title="HOW TO HARNESS FULL POTENTIAL asdfsda asfadsf sdfsdaf" />
-                    <Blog pubDate="September 28, 2024" title="HOW TO HARNESS FULL POTENTIAL asdfsda asfadsf sdfsdaf" />
-                    <Blog pubDate="September 28, 2024" title="HOW TO HARNESS FULL POTENTIAL asdfsda asfadsf sdfsdaf" />
-                    <Blog pubDate="September 28, 2024" title="HOW TO HARNESS FULL POTENTIAL asdfsda asfadsf sdfsdaf" />
-                    <Blog pubDate="September 28, 2024" title="HOW TO HARNESS FULL POTENTIAL asdfsda asfadsf sdfsdaf" />
+      <div className="flex justify-between gap-4 overflow-hidden">
+        {visibleBlogs.map((blog) => (
+          <Blog key={blog.id} pubDate={blog.pubDate} title={blog.title} />
+        ))}
+      </div>
 
-                </div>
-            </div>
-        </div>
-    );
+
+    </div>
+  );
 };
 
 export default Blogs;
