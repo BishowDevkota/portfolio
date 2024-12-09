@@ -18,7 +18,7 @@ const SectionTitleWithArrow = ({
   };
 
   return (
-    <div className="flex justify-between items-center max-md:flex-col gap-4">
+    <div className="flex justify-between items-center max-md:flex-col gap-4 mb-8">
       <div className="flex items-center gap-4">
         <div>
           <h2 className="text-[--green] text-lg font-semibold">{smallHeading}</h2>

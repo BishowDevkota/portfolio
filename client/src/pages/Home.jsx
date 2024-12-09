@@ -51,7 +51,7 @@ const Home = () => {
         <div className="w-[80%] mx-auto h-full">
             <div
                 className="relative overflow-hidden"
-
+                style={{ minHeight: "600px" }}
             >
                 <div
                     className="flex transition-transform duration-700 ease-in-out"

@@ -9,8 +9,8 @@ const Blogs = () => {
 
   const blogs = [
     { id: 2, pubDate: "September 25, 2024", title: "Blog Post gfdsuyhfd fgdsjh fgds sdfghjg dfsdgfs sdf " },
-    { id: 1, pubDate: "September 25, 2024", title: "Blog Post 1" },
-    { id: 3, pubDate: "September 25, 2024", title: "Blog Post 3" },
+    { id: 1, pubDate: "September 25, 2024", title: "dfdf dfdsaf a sf asdfasfa sfasfsdf asdfasf " },
+    { id: 3, pubDate: "September 25, 2024", title: "fasdf sdfas asdfsdf asfsdf asdfas sfasdf  Post 3" },
     { id: 4, pubDate: "September 25, 2024", title: "Blog Post 4" },
     { id: 5, pubDate: "September 25, 2024", title: "Blog Post 5" },
     { id: 6, pubDate: "September 25, 2024", title: "Blog Post 6" },

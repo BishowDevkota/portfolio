@@ -19,19 +19,19 @@ const App = () => {
           <div id="home" className="bg-cover bg-[url('/image/wlc-bg1.jpg')] max-lg:py-10">
             <Home />
           </div>
-          <div id="about" className="bg-cover bg-[url('/image/project-bg.jpg')] py-14">
+          <div id="about" className="bg-cover bg-[url('/image/project-bg.jpg')] py-10">
             <About />
           </div>
-          <div id="skills" className="py-14">
+          <div id="skills" className="py-10">
             <Skills />
           </div>
-          <div id="services" className="py-14">
+          <div id="services" className="py-10">
             <Services />
           </div>
-          <div id="projects" className="bg-cover bg-[url('/image/project-bg.jpg')] py-14">
+          <div id="projects" className="bg-cover bg-[url('/image/project-bg.jpg')] py-10">
             <Project />
           </div>
-          <div id="blog" className="py-14">
+          <div id="blog" className="py-10">
             <Blogs />
           </div>
           <div className="bg-cover bg-[url('/image/map.png')]" id="contact">
