@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { MdArrowForwardIos } from "react-icons/md";
 import ActionButton from "../components/ActionButton";
 
 const Home = () => {
     const [activeSlide, setActiveSlide] = useState(0);
+    const intervalRef = useRef(null);
 
     const slides = [
         {
@@ -14,29 +15,43 @@ const Home = () => {
         },
         {
             id: 1,
-            heading: "IMAGINATION IS MORE IMPORTANT THAN KNOWLEDGE",
+            heading: "CREATIVITY IS CONTAGIOUS, PASS IT ON",
             text: "Lorem ipsum dolor sit amet consectetur adipisicing elit consectetur adipisicing elit.",
             image: "/image/author2.png",
         },
     ];
 
-    useEffect(() => {
-        const interval = setInterval(() => {
+    const startTimer = () => {
+        intervalRef.current = setInterval(() => {
             setActiveSlide((prev) => (prev + 1) % slides.length);
         }, 5000);
+    };
 
-        return () => clearInterval(interval);
-    }, [slides.length]);
+    const stopTimer = () => {
+        if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+        }
+    };
 
     const handleSlideChange = (id) => {
+        stopTimer();
         setActiveSlide(id);
+        startTimer();
     };
+
+    useEffect(() => {
+        startTimer();
+
+        return () => {
+            stopTimer();
+        };
+    }, [slides.length]);
 
     return (
         <div className="w-[80%] mx-auto h-full">
             <div
                 className="relative overflow-hidden"
-                style={{ minHeight: "600px" }}
+
             >
                 <div
                     className="flex transition-transform duration-700 ease-in-out"
@@ -80,7 +95,6 @@ const Home = () => {
                                             text="GETTING STARTED"
                                             IconComponent={MdArrowForwardIos}
                                         />
-
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +102,7 @@ const Home = () => {
                                 <img
                                     src={slide.image}
                                     alt="Author illustration"
-                                    className="min-w-[350px] h-auto object-contain"
+                                    className="min-w-[350px] h-auto object-contain transition-all duration-100"
                                 />
                             </div>
                         </div>
@@ -109,7 +123,6 @@ const Home = () => {
                     ))}
                 </div>
             </div>
-
         </div>
     );
 };

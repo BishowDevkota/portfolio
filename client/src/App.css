@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 :root {
   --green: #08d665;
-  --background: #090b0a;
+  --background: #0b0d0e;
   --white: #ffffff;
   --cardBg: #131617;
   --inputBg: #32383a;
@@ -13,33 +13,33 @@ body {
 }
 @keyframes slideDown {
   from {
-      transform: translateY(-100%);
-      opacity: 0;
+    transform: translateY(-100%);
+    opacity: 0;
   }
   to {
-      transform: translateY(0);
-      opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
 @keyframes slideDownB {
   from {
-      transform: translateY(-80%);
-      opacity: 0;
+    transform: translateY(-80%);
+    opacity: 0;
   }
   to {
-      transform: translateY(0);
-      opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
 @keyframes slideRight {
   from {
-      transform: translateX(-50%);
-      opacity: 0;
+    transform: translateX(-50%);
+    opacity: 0;
   }
   to {
-      transform: translateX(0);
-      opacity: 1;
+    transform: translateX(0);
+    opacity: 1;
   }
 }

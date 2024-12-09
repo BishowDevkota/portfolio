@@ -7,7 +7,7 @@ const Blog = (props) => {
     return (
         <div className="relative">
             <div
-                className="flex flex-col flex-wrap lg:w-[380px] md:w-[280px] m-w-[220px] h-auto items-center bg-white group"
+                className="flex flex-col flex-wrap lg:w-[340px] md:w-[280px] m-w-[220px] h-auto items-center bg-white group"
 
             >
                 <img

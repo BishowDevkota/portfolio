@@ -36,7 +36,7 @@ const Blogs = () => {
             />
             <div className="overflow-hidden mt-8 relative">
                 <div
-                    className="flex gap-10 transition-transform duration-300"
+                    className="flex gap-8 transition-transform duration-300"
                     style={{
                         transform: `translateX(${offset * cardWidth}px)`,
                         width: `${(totalProjects + 2) * cardWidth}px`,
