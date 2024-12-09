@@ -1,36 +1,43 @@
-import React, { useState } from 'react';
-import SectionTitleWithArrow from '../components/SectionTitleWithArrow';
-import ProjectCard from '../components/ProjectCard';
+import React, { useState } from "react";
+import SectionTitleWithArrow from "../components/SectionTitleWithArrow";
+import Blog from "../components/Blog";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { useMediaQuery } from "react-responsive";
+import ProjectCard from "../components/ProjectCard";
 
 const Project = () => {
-  const [offset, setOffset] = useState(0);
-  const totalProjects = 8; // Total number of ProjectCard components
-  const cardWidth = 380; // The width of each project card
-  const visibleCards = 4; // Number of visible cards at once
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Function to handle slide logic for arrows
-  const handleSlide = (direction) => {
-    if (direction === 'left') {
-      setOffset((prev) => {
-        // Loop back to the last card
-        if (prev === 0) {
-          return -(totalProjects - 1); // go to the last card
-        }
-        return prev + 1;
-      });
-    } else if (direction === 'right') {
-      setOffset((prev) => {
-        // Loop back to the first card
-        if (prev === -(totalProjects - 1)) {
-          return 0; // go to the first card
-        }
-        return prev - 1;
-      });
-    }
+  const projects = [
+
+    { id: 1, desc: "S, 2024", img: "./image/about1.png " },
+    { id: 2, desc: "eCOMMERCE WEBSITE 25, 2024", img: "./image/about1.png " },
+    { id: 3, desc: "Mobile application 25, 2024", img: "./image/about1.png" },
+    { id: 4, desc: "Desktop Application", img: "./image/about1.png" },
+    { id: 5, desc: "September 25, 2024", img: "./image/about1.png" },
+    { id: 6, desc: "September 25, 2024", img: "./image/about1.png" },
+    { id: 7, desc: "September 25, 2024", img: "./image/about1.png" },
+
+
+  ];
+
+  const isSmallScreen = useMediaQuery({ maxWidth: 640 });
+  const isMediumScreen = useMediaQuery({ minWidth: 641, maxWidth: 1024 });
+
+  // Determine the visible blog count based on screen size
+  const getVisibleBlogCount = () => {
+    if (isSmallScreen) return 1;
+    if (isMediumScreen) return 2;
+    return 3; // default to 3 for large screens
   };
 
+  const visibleProjects = Array.from({ length: getVisibleBlogCount() }, (_, index) => {
+    const projectIndex = (currentIndex + index) % projects.length;
+    return projects[projectIndex];
+  });
+
   return (
-    <div className="w-[80%] mx-auto mb-12">
+    <div className="w-[80%] mx-auto py-8">
       <SectionTitleWithArrow
         smallHeading={"WORKING PROCESS"}
         largeWhiteHeading={"LATEST WORKING"}
@@ -38,30 +45,17 @@ const Project = () => {
         description={
           "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint ratione reprehenderit"
         }
-        handleSlide={handleSlide}
+        setCurrentIndex={setCurrentIndex} // Pass the state updater
+        blogs={projects} // Pass blogs
       />
-      <div className="overflow-hidden mt-8 relative">
-        <div
-          className="flex gap-10 transition-transform duration-300"
-          style={{
-            transform: `translateX(${offset * cardWidth}px)`, // Shift based on offset
-            width: `${(totalProjects + 2) * cardWidth}px`, // Width includes cloned items
-          }}
-        >
 
-          <ProjectCard image={"https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"} projectDescription={"this is my first project"} />
-
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          {/* Clone the first card at the end */}
-          <ProjectCard />
-        </div>
+      <div className="flex justify-between gap-z overflow-hidden">
+        {visibleProjects.map((project) => (
+          <ProjectCard key={project.id} projectDesc={project.desc} proImg={project.img} />
+        ))}
       </div>
+
+
     </div>
   );
 };

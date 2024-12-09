@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ProjectCard = ({ image ,projectDescription}) => {
+const ProjectCard = ({ projectDesc ,proImg}) => {
   const [hoverDirection, setHoverDirection] = useState('');
   const [isHovered, setIsHovered] = useState(false);
 
@@ -46,19 +46,19 @@ const ProjectCard = ({ image ,projectDescription}) => {
 
   return (
     <div
-      className="relative flex items-center justify-center min-w-[380px] min-h-[400px] bg-[--cardBg] overflow-hidden"
+      className="relative flex items-center justify-center max-w-[320px] min-h-[400px] bg-[--cardBg] overflow-hidden"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <img
-        src={image}
+        src={proImg}
         alt=""
-        className="w-[340px] h-[360px] object-cover"
+        className="w-full h-full p-5 object-cover"
       />
       <div
         className={`absolute inset-0 bg-[--green]  flex items-center justify-center text-white text-lg font-bold transition-transform duration-300 ${getTransformClasses()}`}
       >
-        {projectDescription}
+        {projectDesc}
       </div>
     </div>
   );
